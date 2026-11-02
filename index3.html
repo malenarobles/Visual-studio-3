@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    const add = (a,b) => a + b;
+    console.log(add(1,2)); // 3
+
+    const subtract = (a, b) => {
+        return a - b;
+    };
+    console.log(subtract(2, 1)); // 1
+
+// ---------------------------------------------------------------------
+  const numeros = [1, 2, 3, 4, 5];
+  const resultadoFilter = numeros.filter((numero) => numero % 2 === 0 );
+  // Salida [2, 4]
+  
+  // Supongamos que tenemos un arreglo de objetos que representan productos en un inventario de una 
+  // tienda, y queremos filtrar solo los productos que estan agotados (es decir, aquellos que tienen una
+  // cantidad en stock igual a cero). Ademas, queremos obtener un nuevo arreglo que contenga solo los
+  // nombres de los productos agotados junto con su categoría.
+
+  const inventario = [
+    {nombre: "Camisa", categoria: "Ropa", stock: 10},
+    {nombre: "Pantalón", categoria: "Ropa", stock: 0},
+    {nombre: "Zapatos", categoria: "Calzado", stock: 0},
+    {nombre: "Teléfono", categoria: "Electrónica", stock: 5},
+    {nombre: "Tablet", categoria: "Electrónica", stock: 0},
+  ];
+
+  // Usar filter
+  const productosAgotados = inventario.filter((producto) => producto.stock === 0);
+
+  // Usar map
+  const nombresYcategorias = productosAgotados.map((producto) => ({
+    nombre: producto.nombre,
+    categoria: producto.categoria
+  }))
+
+  console.log(nombresYcategorias);
+
+
+  // Función tradicional
+  function saludar(nombre){
+    return "Hola, " + nombre + "!";
+  }
+  console.log(saludar('Moris'));
+
+
+  // Función flecha
+  const saludarFlecha = (nombre) => {
+    return "Hola, " + nombre + "!";
+  };
+  console.log(saludar('Moris'));
+
+
+  // Función simplificada
+  const saludarLinea = (nombre) => "Hola, " + nombre + "!";
+  console.log(saludarLinea('Moris'));
+
+  // Función mas compleja
+  const personas = [
+    { nombre: "Juan", edad: 25},
+    { nombre: "María", edad: 17},
+    { nombre: "Carols", edad: 30},
+    { nombre: "Laura", edad: 20},
+    { nombre: "Pedro", edad: 14},
+  ];
+
+  // funcion flecha para calcular el promedio de edDES
+  const calcularPromedioEdades = (personas) => {
+    let sumaEdades = 0;
+
+    for (let persona of personas) {
+      sumaEdades += persona.edad;
+    }
+
+    return sumaEdades / personas.lenght;
+  };
+
+  const promedioEdades = calcularPromedioEdades(personas);
+  console,log("El promedio de edades es:", promedioEdades)
+
+
+
+    
+
+
+
+
+  </script>  
+</body>
+</html>
